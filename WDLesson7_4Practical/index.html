@@ -3,35 +3,36 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Pracitcal 7.4</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <script src="script.js"></script>
-   </head>
+    <title>WD Practical 7.4</title>    
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="helper.js"></script>
+    <script src="script.js"></script>    
+  </head>
+  
+  <body onload="init()">
     <div id="banner" class="container center">
-      <div style="text-align:center">
-          <h1>NYC Open Data</h1>
-          <h2>NYC Shootings</h2>
-      </div>
+      <h1> NYC Shootings Since 2006 </h1>
     </div>
     <div class="container subbanner">
       <div>
-        <p>This website allows you to view incidents involving shootings around New York since 2006 from NYC Open Data.</p>
-        <a class="button" href="https://opendata.cityofnewyork.us/" target="_blank">NYC Open Data</a> 
+        <h4>This website allows you to view incidents involving shootings around New York since 2006 from NYC Open Data. </h4>
+        <a class="button" href="https://opendata.cityofnewyork.us/" target="_blank">NYC Open Data</a>
         <a class="button" target="_blank" href="https://data.cityofnewyork.us/Public-Safety/Shootings-2006-Present-/5ucz-vwe8/about_data"> NYC Shootings</a>
         <a class="button" target="_blank" href="https://jsoneditoronline.org/"> JSON Editor Online</a>
        </div>
-    </div>
-
-      <div class="card" id="rightPanel">
-        <h1>NYC Shootings</h1>
-        <div id="result"></div>
-        <div id="output" class="container"></div>
       </div>
+    
+    <div id="output" class="container">
+      <div id="cards_output" class="container"></div>
+      <div id="map"></div>
     </div>
-
+    
     <div id="footer" class="container center">
-      <h3>WD 7.4 Practical</h3>
+      <h3>Lesson 7.4 Demonstration</h3>
     </div>  
   </body>
 </html>
