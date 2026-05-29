@@ -29,7 +29,7 @@ function card( info ){
                  <h3>${info.boro}</h3>
                  <hr>
                  <p>${info.occur_date}</p>
-                 <p>${info.occus_time}</p>
+                 <p>${info.occur_time}</p>
                  <hr>
                  <p>${info.loc_of_occur_desc}</p>
                  <p>${info.location_desc}</p>
