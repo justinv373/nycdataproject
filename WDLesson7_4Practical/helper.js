@@ -37,4 +37,6 @@ function card( info ){
                  ${mapButton}
               </div>`;
   return build;
+
+  
 }
