@@ -106,3 +106,31 @@ nav a:hover{
   
   box-shadow:2px 2px 2px gray;
 }
+
+.container1 {
+    box-shadow:2px 2px 2px black;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 30px;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    background: rgb(202, 202, 202);
+}
+
+.image {
+    width: 300px;
+    border-radius: 10px;
+}
+
+.container1 img{
+    filter: grayscale(100%);
+}
+
+.container1 img:hover{
+    filter: none;
+}
+
+*{
+  transition:1s;
+}
