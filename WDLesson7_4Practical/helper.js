@@ -44,11 +44,14 @@ function searchData() {
   let search = document.getElementById("search").value.toLowerCase();
   let result = document.getElementById("result");
 
+
   let build = "";
   let ct = 0;
 
+
   for (let i = 0; i < data.length; i++) {
     let info = data[i];
+
 
     let searchableText = `
       ${info.boro}
@@ -58,13 +61,17 @@ function searchData() {
       ${info.location_desc}
     `.toLowerCase();
 
+
     if (searchableText.includes(search)) {
 
+
       let mapButton = "";
+
 
       if(info.latitude && info.longitude){
         mapButton = `<input type="button" value="Map" onclick="showMap('${info.longitude}', '${info.latitude}')">`;
   }
+
 
       build += `
         <div class="card fitted">
@@ -80,9 +87,11 @@ function searchData() {
         </div>
       `;
 
+
       ct++;
     }
   }
+
 
   result.innerHTML = `${ct} Results found.`;
   output.innerHTML = build;
