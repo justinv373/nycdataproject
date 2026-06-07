@@ -3,7 +3,7 @@ function get(id){
 }
 
 function showMap(lat, lon){
-  let location = [lat, lon];
+  let location = [lat,lon];
   if(!mapObj){
       mapObj = L.map("map");
   } 
@@ -37,6 +37,53 @@ function card( info ){
                  ${mapButton}
               </div>`;
   return build;
+}
 
-  
+function searchData() {
+  let output = document.getElementById("output");
+  let search = document.getElementById("search").value.toLowerCase();
+  let result = document.getElementById("result");
+
+  let build = "";
+  let ct = 0;
+
+  for (let i = 0; i < data.length; i++) {
+    let info = data[i];
+
+    let searchableText = `
+      ${info.boro}
+      ${info.occur_date}
+      ${info.occur_time}
+      ${info.loc_of_occur_desc}
+      ${info.location_desc}
+    `.toLowerCase();
+
+    if (searchableText.includes(search)) {
+
+      let mapButton = "";
+
+      if(info.latitude && info.longitude){
+        mapButton = `<input type="button" value="Map" onclick="showMap('${info.longitude}', '${info.latitude}')">`;
+  }
+
+      build += `
+        <div class="card fitted">
+          <h3>${info.boro}</h3>
+          <hr>
+          <p>${info.occur_date}</p>
+          <p>${info.occur_time}</p>
+          <hr>
+          <p>${info.loc_of_occur_desc}</p>
+          <p>${info.location_desc}</p>
+          <hr>
+          ${mapButton}
+        </div>
+      `;
+
+      ct++;
+    }
+  }
+
+  result.innerHTML = `${ct} Results found.`;
+  output.innerHTML = build;
 }
