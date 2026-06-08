@@ -40,7 +40,7 @@ function card( info ){
 }
 
 function searchData() {
-  let output = document.getElementById("output");
+  let cards_output = document.getElementById("cards_output");
   let search = document.getElementById("search").value.toLowerCase();
   let result = document.getElementById("result");
 
@@ -94,5 +94,5 @@ function searchData() {
 
 
   result.innerHTML = `${ct} Results found.`;
-  output.innerHTML = build;
+  cards_output.innerHTML = build;
 }
