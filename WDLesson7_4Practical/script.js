@@ -13,3 +13,13 @@ async function init(){
   }
   cards_output.innerHTML = build;
 }
+
+function displayChart( data, id, type ){
+  let chart = c3.generate({
+    bindto: '#' + id,
+    data: {
+      columns: data,
+      type:type
+    }
+  });
+}

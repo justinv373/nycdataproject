@@ -96,3 +96,35 @@ function searchData() {
   result.innerHTML = `${ct} Results found.`;
   cards_output.innerHTML = build;
 }
+
+let subdata;
+function ByBorough(){
+  let q = 0, bk = 0, bx = 0, m = 0, s = 0;
+  
+  for(let i = 0; i < data.length; i++){
+    let info = data[i];
+    if(info.boro == "QUEENS"){
+      q++;
+    }else if(info.boro == "MANHATTAN"){
+      m++;
+    }else if(info.boro == "BROOKLYN"){
+      bk++;
+    }else if(info.boro == "BRONX"){
+      bx++;
+    }else if(info.boro == "STATEN ISLAND"){
+      s++;
+    }
+  }
+
+  let chartData = [
+    ["QUEENS",q],
+    ["MANHATTAN",m],
+    ["BROOKLYN", bk],
+    ["BRONX", bx],
+    ["STATEN ISLAND", s]
+  ]
+  
+  let chartType = get("chartType").value;
+  
+  displayChart(chartData,"output_chart",chartType)
+}
